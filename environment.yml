@@ -7,4 +7,5 @@ dependencies:
   - r-ggplot2
   - r-tidyr
   - r-readr
+  - r-corrplot
 
