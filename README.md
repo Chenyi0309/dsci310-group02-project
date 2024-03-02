@@ -57,13 +57,13 @@ Details on the data wrangling, cleaning, and exploratory analysis are provided i
 Our findings are documented within the Jupyter notebook. For a visual and textual summary of the results, please refer to the corresponding sections in the notebook.
 
 ## Contributing
-We welcome contributions to our project. Please refer to CONTRIBUTING.md for contribution guidelines.
+We welcome contributions to our project. Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ## Code of Conduct
-Please read our CODE_OF_CONDUCT.md for details on our code of conduct, and the process for submitting pull requests to us.
+Please read our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Citation
 
 ## License
-This project is licensed under the MIT License - see the file for details.
+This project is licensed under the [MIT License](LICENSE.md) - see the file for details.
 
