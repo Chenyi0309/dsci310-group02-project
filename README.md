@@ -1,4 +1,4 @@
-# DSCI 310 Group02 Project: Uncovering the Drivers of Housing Prices in Beijing： The Influence of Location and Time
+# DSCI 310 Group02 Project: Uncovering the Drivers of Housing Prices in Beijing：The Influence of Location and Time
 
 **Authors**: Prabhjot Singh, Yunxuan Zhang, Chenyi Zhao, Yelia Ye
 
@@ -51,10 +51,25 @@ conda activate my_r_env
 jupyter notebook analysis_notebook.ipynb
 ```
 ## Data Analysis
-Details on the data wrangling, cleaning, and exploratory analysis are provided in analysis_notebook.ipynb. Follow the notebook for a step-by-step walkthrough of the methodology.
+
+The dataset from Lianjia.com was loaded and inspected for structure and summary statistics. Initial data exploration included reviewing the distributions of key variables such as square footage and price. 
+
+Data cleaning processes involved removing irrelevant columns, converting character variables to their appropriate types, and handling missing values. We also removed variables with non-ASCII characters to streamline the dataset for analysis.
+
+Further exploratory data analysis revealed insights into the relationships between various features of the properties and their prices. For example, histograms were used to visualize the distribution of total prices, while scatter plots helped in understanding the relationship between the square footage of properties and their total prices.
+
+Correlation matrices were computed and visualized to identify potential linear relationships between numerical variables, informing subsequent modeling choices.
 
 ## Results
-Our findings are documented within the Jupyter notebook. For a visual and textual summary of the results, please refer to the corresponding sections in the notebook.
+
+Our analysis included detailed visualizations to compare various property features with the total price, which provided a clearer understanding of the housing market in Beijing. 
+
+Box plots were employed to display the relationship between the number of living rooms, drawing rooms, and bathrooms with the total price of the properties. These plots illustrated the variation in price distribution across different property types.
+
+Finally, a linear regression model was developed to predict the total price of properties based on the available features. The model's performance was evaluated by comparing actual prices with predicted prices, which was visualized through a scatter plot overlaid with a line of perfect prediction. This comparison highlighted the model’s accuracy and potential predictive power.
+
+The results from these analyses will help in understanding the drivers of housing prices in Beijing and could assist buyers and sellers in making informed decisions in the real estate market.
+
 
 ## Contributing
 We welcome contributions to our project. Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
@@ -64,6 +79,59 @@ Please read our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code
 
 ## Citation
 
+If you find this work useful in your research, please consider cite:
+```
+@article{hou2010housing,
+  author={Hou, Y.},
+  title={Housing price bubbles in Beijing and Shanghai?: A multi‐indicator analysis},
+  journal={International Journal of Housing Markets and Analysis},
+  volume={3},
+  number={1},
+  pages={17--37},
+  year={2010},
+  publisher={Emerald},
+  doi={10.1108/17538271011027050},
+  url={https://doi.org/10.1108/17538271011027050}
+}
+
+@article{ZHANG201872,
+author = {Lei Zhang and Yimin Yi}
+title = {What contributes to the rising house prices in Beijing? A decomposition approach},
+journal = {Journal of Housing Economics},
+volume = {41},
+pages = {72-84},
+year = {2018},
+issn = {1051-1377},
+doi = {https://doi.org/10.1016/j.jhe.2018.04.003},
+url = {https://www.sciencedirect.com/science/article/pii/S1051137717301250}
+}
+
+@article{qin_han_2013,
+  title={Emerging Polycentricity in Beijing: Evidence from Housing Price Variations, 2001–05},
+  author={Qin, Bo and Han, Sun Sheng},
+  journal={Urban Studies},
+  volume={50},
+  number={10},
+  pages={2006--2023},
+  year={2013},
+  publisher={SAGE Publications},
+  doi={10.1177/0042098012471979},
+  url={https://doi.org/10.1177/0042098012471979}
+}
+
+@article{han2021winning,
+  title={Winning at the starting line: The primary school premium and housing prices in Beijing},
+  author={Han, X. and Shen, Y. and Zhao, B.},
+  journal={China Economic Quarterly International},
+  volume={1},
+  number={1},
+  pages={29-42},
+  year={2021},
+  publisher={Elsevier},
+  doi={10.1016/j.ceqi.2020.12.001},
+  url={https://doi.org/10.1016/j.ceqi.2020.12.001}
+}
+```
 ## License
 This project is licensed under the [MIT License](LICENSE.md) - see the file for details.
 
