@@ -79,6 +79,19 @@ Please read our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code
 
 ## Citation
 
+@article{hou2010housing,
+  author={Hou, Y.},
+  title={Housing price bubbles in Beijing and Shanghai?: A multi‐indicator analysis},
+  journal={International Journal of Housing Markets and Analysis},
+  volume={3},
+  number={1},
+  pages={17--37},
+  year={2010},
+  publisher={Emerald},
+  doi={10.1108/17538271011027050},
+  url={https://doi.org/10.1108/17538271011027050}
+}
+
 ## License
 This project is licensed under the [MIT License](LICENSE.md) - see the file for details.
 
