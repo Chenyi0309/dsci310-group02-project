@@ -1,4 +1,4 @@
-# DSCI 310 Group02 Project: Uncovering the Drivers of Housing Prices in Beijing： The Influence of Location and Time
+# DSCI 310 Group02 Project: Uncovering the Drivers of Housing Prices in Beijing：The Influence of Location and Time
 
 **Authors**: Prabhjot Singh, Yunxuan Zhang, Chenyi Zhao, Yelia Ye
 
