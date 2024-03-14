@@ -17,5 +17,3 @@ ggplot(housing_data, aes(x = totalPrice, y = predictedPrice)) +
        y = "Predicted Total Price") +
   theme_minimal()
 
-# Placeholder for summary of findings and conclusions
-# --- Summary of findings and conclusions here ---
