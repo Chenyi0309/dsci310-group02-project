@@ -8,5 +8,3 @@ corrplot(corr_matrix, method = "color", type = "upper", order = "hclust",
          tl.col = "black", tl.srt = 45, 
          col = colorRampPalette(c("#6D9EC1", "white", "#E46726"))(200))
 
-# Placeholder for additional analysis steps
-# --- Your additional analysis here ---
