@@ -1,0 +1,49 @@
+---
+title: 'Uncovering the Drivers of Housing Prices in Beijing: The Influence of Location and Time'
+author: Prabhjot Singh, Yunxuan Zhang, Chenyi Zhao, Yelia Ye
+
+format: 
+    html: 
+        toc: true
+        toc-depth: 2
+    pdf: 
+        toc: true
+        toc-depth: 2
+bibliography: references.bib
+execute: 
+    echo: false
+    warning: false
+editor: scripts
+---
+
+```{r}
+library(tidyverse)
+library(lubridate) 
+library(repr)
+install.packages("corrplot")
+library(corrplot)
+```
+
+## Aim
+
+In this study, we investigate the primary factors that influence the cost of homes in Beijing. By analyzing data from Lianjia.com, we explore how the location of a property and the timing of its sale affect its price. This research aims to shed light on the complex dynamics of Beijing's real estate market and provide a clearer picture for individuals looking to understand the value of real estate in this bustling metropolis.
+
+## Data
+
+Housing price of Beijing from the
+[Kaggle: Housing price of Beijing from 2011 to 2017](https://www.kaggle.com/datasets/ruiqurm/lianjia) 
+
+## Method
+
+The R programming language (R Core Team, 2019) 
+and the following R packages were used to perform the analysis: 
+knitr (Xie 2014), tidyverse (Wickham 2017), and Quarto (Allaire et al 2022). 
+
+## Results
+
+
+## References
+
+
+
+
