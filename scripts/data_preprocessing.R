@@ -1,6 +1,9 @@
 # Import necessary libraries
 library(tidyverse)
 
+
+housing_data <- read_csv("data/Beijinghouse.csv", locale = locale(encoding = "UTF-8")) %>%
+  mutate(floor = str_trim(str_extract(floor,"( .*)"), side = "both"))
 # Load the preprocessed data
 na_count <- housing_data %>%
   summarise(across(everything(), ~sum(is.na(.)))) %>%

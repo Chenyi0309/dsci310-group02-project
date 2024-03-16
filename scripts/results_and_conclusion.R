@@ -1,4 +1,5 @@
-# Linear regression model: totalPrice ~ .
+library(tidyverse)
+beijing_house_price <- read_csv("results/beijing_house_price_cleaned.csv")
 model <- lm(totalPrice ~ . - constructionTime - buildingType, data = beijing_house_price)
 # Summary of the regression model
 model_summary <- summary(model)
