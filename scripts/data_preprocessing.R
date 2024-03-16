@@ -6,7 +6,7 @@ na_count <- housing_data %>%
   summarise(across(everything(), ~sum(is.na(.)))) %>%
   pivot_longer(everything(), names_to = "Variable", values_to = "NA_count")
 
-# Generate the plot with a white background
+# Generate the plot with NA value
 na_plot <- ggplot(na_count, aes(x = reorder(Variable, NA_count), y = NA_count)) +
   geom_bar(stat = "identity") +
   coord_flip() +  # Flip the axes to make the bars horizontal
