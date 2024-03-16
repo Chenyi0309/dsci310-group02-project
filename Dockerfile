@@ -3,22 +3,32 @@ FROM jupyter/base-notebook:latest
 
 # Install system dependencies
 USER root
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
-    curl \
-    vim
+RUN apt-get update && apt-get install -y --no-install-recommends git curl vim
 
-# Copy the project directory (including the environment.yml file) into the container
-COPY . /home/jovyan/work
+# Install mamba from conda-forge to manage conda packages more efficiently
+RUN conda install mamba -n base -c conda-forge
 
-# Create a Conda environment using the environment.yml file to install R dependencies
-RUN conda env create -f /home/jovyan/work/environment.yml
+# Use mamba to install Python and R dependencies to ensure faster resolution
+RUN mamba install -c conda-forge \
+    numpy=1.19.2 \
+    pandas=1.1.3 \
+    scikit-learn=0.23.2 \
+    matplotlib=3.3.2 \
+    r-base=4.0.5 \
+    r-dplyr \
+    r-ggplot2 \
+    r-tidyr \
+    r-readr \
+    r-corrplot \
+    notebook=6.4.0 \
+    jupyterlab=3.0.14 \
+    ipywidgets \
+    -y
 
-# Activate the newly created Conda environment
-SHELL ["conda", "run", "-n", "my_r_env", "/bin/bash", "-c"]
+ COPY . /home/jovyan/work
 
-# Install Python dependencies within the activated Conda environment
-RUN pip install numpy==1.19.2 pandas==1.1.3 scikit-learn==0.23.2 matplotlib==3.3.2
+# Activate the base environment by default when running commands with /bin/bash
+SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
 # Continue as the non-root user
 USER jovyan
