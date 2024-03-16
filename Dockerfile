@@ -5,11 +5,8 @@ FROM jupyter/base-notebook:latest
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends git curl vim
 
-# Install mamba from conda-forge to manage conda packages more efficiently
-RUN conda install mamba -n base -c conda-forge
-
-# Use mamba to install Python and R dependencies to ensure faster resolution
-RUN mamba install -c conda-forge \
+# Use conda to install Python and R dependencies
+RUN conda install -c conda-forge \
     numpy=1.19.2 \
     pandas=1.1.3 \
     scikit-learn=0.23.2 \
@@ -23,9 +20,11 @@ RUN mamba install -c conda-forge \
     notebook=6.4.0 \
     jupyterlab=3.0.14 \
     ipywidgets \
-    -y
+    -y && \
+    conda clean -afy
 
- COPY . /home/jovyan/work
+# Copy the project directory (including the environment.yml file) into the container
+COPY . /home/jovyan/work
 
 # Activate the base environment by default when running commands with /bin/bash
 SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
