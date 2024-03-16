@@ -1,4 +1,4 @@
-name: my_r_env
+name: beijing_housing_analysis_Group_2
 channels:
   - conda-forge
 dependencies:
@@ -8,4 +8,11 @@ dependencies:
   - r-tidyr
   - r-readr
   - r-corrplot
+  - r-tidyverse
+  - r-lubridate
+  - r-repr
+  - r-cowplot
+  - r-ggmap
+  - r-mapproj
+  - r-viridis
 
