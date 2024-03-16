@@ -11,6 +11,7 @@ This repository is part of a data analysis project for DSCI 310, exploring the f
 - [Project Overview](#project-overview)
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
+- [Docker Usage](#using-docker)
 - [Data Analysis](#data-analysis)
 - [Results](#results)
 - [Contributing](#contributing)
@@ -50,6 +51,19 @@ conda activate my_r_env
 ```
 jupyter notebook analysis_notebook.ipynb
 ```
+
+## Using Docker
+
+This project includes a Dockerfile which allows you to build a Docker image and run the analysis in an isolated environment. Here's how you can use Docker to set up your environment:
+
+### Building the Docker Image
+
+First, build the Docker image from the project directory:
+
+```bash
+docker build -t dsci310-group02-project .
+```
+
 ## Data Analysis
 
 The dataset from Lianjia.com was loaded and inspected for structure and summary statistics. Initial data exploration included reviewing the distributions of key variables such as square footage and price. 
