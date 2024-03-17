@@ -1,0 +1,94 @@
+---
+title: 'Uncovering the Drivers of Housing Prices in Beijing: The Influence of Location and Time'
+author: Prabhjot Singh, Yunxuan Zhang, Chenyi Zhao, Yelia Ye
+
+format: 
+    html: 
+        toc: true
+        toc-depth: 2
+    pdf: 
+        toc: true
+        toc-depth: 2
+bibliography: references.bib
+execute: 
+    echo: false
+    warning: false
+---
+
+```{r}
+library(tidyverse)
+library(lubridate) 
+library(repr)
+library(corrplot)
+```
+
+## Aim
+
+In this study, we investigate the primary factors that influence the cost of homes in Beijing. By analyzing data from Lianjia.com, we explore how the location of a property and the timing of its sale affect its price. This research aims to shed light on the complex dynamics of Beijing's real estate market and provide a clearer picture for individuals looking to understand the value of real estate in this bustling metropolis.
+
+## Data
+
+Housing price of Beijing from the
+[Kaggle: Housing price of Beijing from 2011 to 2017](https://www.kaggle.com/datasets/ruiqurm/lianjia) 
+
+## Method
+
+The R programming language (R Core Team, 2019) 
+and the following R packages were used to perform the analysis: 
+knitr (Xie 2014), tidyverse (Wickham 2017), and Quarto (Allaire et al 2022). 
+
+## Data Analysis
+
+The dataset from Lianjia.com was loaded and inspected for structure and summary statistics. Initial data exploration included reviewing the distributions of key variables such as square footage and price.
+
+Data cleaning processes involved removing irrelevant columns, converting character variables to their appropriate types, and handling missing values. We also removed variables with non-ASCII characters to streamline the dataset for analysis.
+
+Further exploratory data analysis revealed insights into the relationships between various features of the properties and their prices. For example, histograms were used to visualize the distribution of total prices, while scatter plots helped in understanding the relationship between the square footage of properties and their total prices.
+
+Correlation matrices were computed and visualized to identify potential linear relationships between numerical variables, informing subsequent modeling choices.
+
+## Results
+
+![Housing Price of Beijing from 2011 to 2017](../results/figure/plot_1_totalprice_distribution_plot.png){#fig-totalprice-distribution}
+
+Upon curating a refined dataset, we embarked on exploratory data analysis to unravel underlying patterns and associations. @fig-totalprice-distribution showcased a histogram of total prices, indicating a right-skewed distribution with a marked concentration of lower-priced properties—a phenomenon underscored by the mean or median price depicted through a central red line. This visualization was pivotal in discerning the varied housing market range within Beijing.
+
+![Correlation Between Variables](../results/figure/plot_2_correlation_plot.png){#fig-correlation}
+
+In @fig-correlation, we computed and visualized a correlation matrix to highlight potential linear relationships, with circle sizes corresponding to the correlation strength. Notably, the matrix revealed a prominent positive correlation between property size and total price, suggesting a direct relationship between square footage and market value.
+
+![Total Housing Price of Whether Having Subway](../results/figure/plot_3_price_distribution_subway.png){#fig-subway-distribution}
+
+![Total housing Price of Whether Having Elevator](../results/figure/plot_4_price_distribution_elevator.png){#fig-elevator-distribution}
+
+The value of property features was illustrated in @fig-subway-distribution and @fig-elevator-distribution through box plots comparing total prices based on the presence of subways and elevators. The premium for these features was clearly visible, reflecting the higher prices consumers are willing to pay for added convenience.
+
+![Prices in Function of The Renovation Condition](../results/figure/plot_5_renovation_condition.png){#fig-renovation-condition}
+
+@fig-renovation-condition delved into the impact of renovation conditions on property values. Through the variance illustrated in the box plots for each condition category, we observed a correlation between renovation quality and pricing, indicating that buyers are inclined to invest more in well-maintained properties.
+
+![Monthly Average Residential Sale Price](../results/figure/plot_6_monthly_price_overview.png){#fig-monthly-price}
+
+The market's temporal dynamics were captured in @fig-monthly-price, a time series plot that traced the trajectory of average monthly residential sale prices, with the volume of transactions visually represented by the size of the points. This plot served as an indicator of market trends and economic factors affecting housing prices over time.
+
+![Beijing Map](../results/figure/plot_7_beijing_map.png){#fig-beijing-map}
+
+![Map with Housing Price](../results/figure/plot_8_beijing_map_with_price_overlay.png){#fig-beijing-map-with-price}
+
+Geospatial distribution and its influence on property values were elucidated through @fig-beijing-map and @fig-beijing-map-with-price. A base map of Beijing provided the context for a subsequent overlay of price data, revealing distinct high and low-value areas across the cityscape.
+
+![District-wise Housing Price Distribution](../results/figure/plot_9_boxplot_price_district.png){#fig-district-wise-housing-price}
+
+@fig-district-wise-housing-price presented a detailed district-wise analysis, comparing housing prices across Beijing's various districts through box plots. This granular view highlighted the real estate disparities influenced by district-specific characteristics.
+
+![Beijing Map with District Overlay](../results/figure/plot_10_beijing_map_with_district_overlay.png){#fig-beijing-map-with-district}
+
+Finally, @fig-beijing-map-with-district combined geographic and price data by color-coding each district on a map of Beijing, offering an at-a-glance comparison of real estate valuation across different urban areas.
+
+Our linear regression model, developed after the exploratory analysis, utilized these processed and visualized data to predict total property prices. The model's efficacy was visually assessed by overlaying actual versus predicted prices on a scatter plot, which served as a testament to the model’s predictive capabilities. The careful curation and analysis of the dataset provided insights into the market drivers for housing prices in Beijing, which could aid stakeholders in making data-driven decisions.
+
+## References
+
+
+
+
