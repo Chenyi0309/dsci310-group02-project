@@ -81,7 +81,7 @@ make all
 ```
 3. **Clean Generated Files**: After the project is complete, if you need to clean up files generated during the analysis process, you can run:
 
-````bash
+```bash
 make clean
 ```
 
