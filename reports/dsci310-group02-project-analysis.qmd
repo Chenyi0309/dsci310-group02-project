@@ -47,15 +47,17 @@ Further exploratory data analysis revealed insights into the relationships betwe
 
 Correlation matrices were computed and visualized to identify potential linear relationships between numerical variables, informing subsequent modeling choices.
 
-## Results
+## Visualisation
 
 ![Housing Price of Beijing from 2011 to 2017](../results/figure/plot_1_totalprice_distribution_plot.png){#fig-totalprice-distribution}
 
 Upon curating a refined dataset, we embarked on exploratory data analysis to unravel underlying patterns and associations. @fig-totalprice-distribution showcased a histogram of total prices, indicating a right-skewed distribution with a marked concentration of lower-priced properties—a phenomenon underscored by the mean or median price depicted through a central red line. This visualization was pivotal in discerning the varied housing market range within Beijing.
 
+
 ![Correlation Between Variables](../results/figure/plot_2_correlation_plot.png){#fig-correlation}
 
 In @fig-correlation, we computed and visualized a correlation matrix to highlight potential linear relationships, with circle sizes corresponding to the correlation strength. Notably, the matrix revealed a prominent positive correlation between property size and total price, suggesting a direct relationship between square footage and market value.
+
 
 ![Total Housing Price of Whether Having Subway](../results/figure/plot_3_price_distribution_subway.png){#fig-subway-distribution}
 
@@ -63,13 +65,16 @@ In @fig-correlation, we computed and visualized a correlation matrix to highligh
 
 The value of property features was illustrated in @fig-subway-distribution and @fig-elevator-distribution through box plots comparing total prices based on the presence of subways and elevators. The premium for these features was clearly visible, reflecting the higher prices consumers are willing to pay for added convenience.
 
+
 ![Prices in Function of The Renovation Condition](../results/figure/plot_5_renovation_condition.png){#fig-renovation-condition}
 
 @fig-renovation-condition delved into the impact of renovation conditions on property values. Through the variance illustrated in the box plots for each condition category, we observed a correlation between renovation quality and pricing, indicating that buyers are inclined to invest more in well-maintained properties.
 
+
 ![Monthly Average Residential Sale Price](../results/figure/plot_6_monthly_price_overview.png){#fig-monthly-price}
 
 The market's temporal dynamics were captured in @fig-monthly-price, a time series plot that traced the trajectory of average monthly residential sale prices, with the volume of transactions visually represented by the size of the points. This plot served as an indicator of market trends and economic factors affecting housing prices over time.
+
 
 ![Beijing Map](../results/figure/plot_7_beijing_map.png){#fig-beijing-map}
 
@@ -77,9 +82,11 @@ The market's temporal dynamics were captured in @fig-monthly-price, a time serie
 
 Geospatial distribution and its influence on property values were elucidated through @fig-beijing-map and @fig-beijing-map-with-price. A base map of Beijing provided the context for a subsequent overlay of price data, revealing distinct high and low-value areas across the cityscape.
 
+
 ![District-wise Housing Price Distribution](../results/figure/plot_9_boxplot_price_district.png){#fig-district-wise-housing-price}
 
 @fig-district-wise-housing-price presented a detailed district-wise analysis, comparing housing prices across Beijing's various districts through box plots. This granular view highlighted the real estate disparities influenced by district-specific characteristics.
+
 
 ![Beijing Map with District Overlay](../results/figure/plot_10_beijing_map_with_district_overlay.png){#fig-beijing-map-with-district}
 
@@ -87,8 +94,20 @@ Finally, @fig-beijing-map-with-district combined geographic and price data by co
 
 Our linear regression model, developed after the exploratory analysis, utilized these processed and visualized data to predict total property prices. The model's efficacy was visually assessed by overlaying actual versus predicted prices on a scatter plot, which served as a testament to the model’s predictive capabilities. The careful curation and analysis of the dataset provided insights into the market drivers for housing prices in Beijing, which could aid stakeholders in making data-driven decisions.
 
-## References
+## Result
 
+```{r}
+#| label: tbl-model
 
+file_content <- readLines("../results/model_summary.txt")
 
+cat(file_content, sep="\n")
+```
 
+![Prediction Model](../results/price_prediction_plot.png){#fig-prediction-model}
+
+@tbl-model is the statistical summary of our linear regression model, which is built to predict house prices in Beijing, with the response variable totalPrice and various explanatory variables. The model excludes constructionTime and buildingType from the analysis.
+
+The model has a high Multiple R-squared value of 0.8831, indicating a strong fit to the data.
+
+@fig-prediction-model compares actual price and predicted total prices from the model, with a red line representing perfect prediction. Points close to this line are predictions that match closely with actual prices, whereas points further away represent less accurate predictions. @fig-prediction-model shows a strong positive correlation, but with a certain degree of variance as prices increase, suggesting that while the model predicts lower-priced houses quite accurately, it is less precise with higher-priced ones.
