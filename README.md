@@ -64,6 +64,11 @@ First, build the Docker image from the project directory:
 docker build -t dsci310-group02-project .
 ```
 
+Then, use the Docker
+```bash
+docker run -it --rm -p 8888:8888 -v "$PWD":/home/jovyan/work dsci310-group02-project
+```
+
 ## Data Analysis
 
 The dataset from Lianjia.com was loaded and inspected for structure and summary statistics. Initial data exploration included reviewing the distributions of key variables such as square footage and price. 
