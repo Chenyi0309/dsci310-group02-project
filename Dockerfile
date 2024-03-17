@@ -5,33 +5,25 @@ FROM jupyter/base-notebook:latest
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends git curl vim
 
-# Use conda to install Python and R dependencies
-RUN conda install -c conda-forge \
-    numpy=1.19.2 \
-    pandas=1.1.3 \
-    scikit-learn=0.23.2 \
-    matplotlib=3.3.2 \
-    r-base=4.0.5 \
-    r-dplyr \
-    r-ggplot2 \
-    r-tidyr \
-    r-readr \
-    r-corrplot \
-    notebook=6.4.0 \
-    jupyterlab=3.0.14 \
-    ipywidgets \
-    -y && \
-    conda clean -afy
-
 # Copy the project directory (including the environment.yml file) into the container
 COPY . /home/jovyan/work
 
-# Activate the base environment by default when running commands with /bin/bash
-SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
+# Create a Conda environment using the environment.yml file
+# Note: Assuming the environment.yml is in the root of your project directory
+RUN conda env create -f /home/jovyan/work/environment.yml
+
+# Clean up to reduce image size
+RUN conda clean -afy
+
+# Make RUN commands use the new environment:
+# The Conda environment name should match the name specified in environment.yml
+# Replace `your_env_name` with the actual name of your Conda environment
+SHELL ["conda", "run", "-n", "beijing_housing_analysis_Group_2", "/bin/bash", "-c"]
 
 # Continue as the non-root user
 USER jovyan
 
 # Set the working directory
 WORKDIR /home/jovyan/work
+
 
