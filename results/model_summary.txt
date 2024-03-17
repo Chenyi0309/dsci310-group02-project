@@ -1,0 +1,55 @@
+
+Call:
+lm(formula = totalPrice ~ . - constructionTime - buildingType, 
+    data = beijing_house_price)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1596.36   -25.86     1.62    29.21  2522.00 
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                          7.094e+03  3.970e+02  17.868  < 2e-16 ***
+Lng                                 -7.155e+01  2.970e+00 -24.090  < 2e-16 ***
+Lat                                  1.240e+01  3.415e+00   3.630 0.000283 ***
+tradeTime                            1.943e-02  4.687e-04  41.454  < 2e-16 ***
+followers                            1.010e-02  4.456e-03   2.267 0.023404 *  
+price                                7.044e-03  1.378e-05 511.325  < 2e-16 ***
+square                               4.493e+00  7.836e-03 573.444  < 2e-16 ***
+livingRoom                          -3.137e+00  2.777e-01 -11.294  < 2e-16 ***
+drawingRoom                         -8.287e+00  3.450e-01 -24.020  < 2e-16 ***
+kitchen                              1.427e+01  1.408e+00  10.134  < 2e-16 ***
+bathRoom                            -1.207e+01  4.808e-01 -25.092  < 2e-16 ***
+floor                               -2.213e-01  2.913e-02  -7.600 2.97e-14 ***
+renovationConditionOther             8.163e-01  4.375e-01   1.866 0.062085 .  
+renovationConditionRough            -1.522e+01  1.095e+00 -13.900  < 2e-16 ***
+renovationConditionSimplicity       -9.305e+00  3.685e-01 -25.254  < 2e-16 ***
+buildingStructureBrick/Wood         -2.206e+02  8.732e+00 -25.261  < 2e-16 ***
+buildingStructureMixed               5.619e+00  6.951e-01   8.085 6.26e-16 ***
+buildingStructureSteel               6.469e+00  6.202e+00   1.043 0.296900    
+buildingStructureSteel/Concrete      2.215e+01  8.336e-01  26.574  < 2e-16 ***
+buildingStructureUnavailable        -1.768e+00  1.150e+01  -0.154 0.877831    
+ladderRatio                         -2.565e-06  5.440e-06  -0.472 0.637225    
+elevatorNo_elevator                  4.545e+00  5.982e-01   7.599 3.00e-14 ***
+fiveYearsPropertyOwnership > 5years  4.461e-01  2.999e-01   1.488 0.136828    
+subwayNo_Subway                      2.131e+00  3.076e-01   6.927 4.31e-12 ***
+districtChaoYang                     4.417e+01  7.965e-01  55.447  < 2e-16 ***
+districtDaXing                       3.773e+01  1.912e+00  19.730  < 2e-16 ***
+districtDongCheng                    8.754e+00  1.112e+00   7.871 3.53e-15 ***
+districtFangShang                    3.562e+00  2.081e+00   1.711 0.087001 .  
+districtFaXing                       3.448e+01  1.331e+00  25.906  < 2e-16 ***
+districtFengTai                      3.842e+01  1.035e+00  37.110  < 2e-16 ***
+districtHaiDian                      1.820e+01  8.194e-01  22.211  < 2e-16 ***
+districtMenTouGou                    3.488e+01  1.214e+00  28.723  < 2e-16 ***
+districtShiJingShan                  3.899e+01  1.186e+00  32.887  < 2e-16 ***
+districtShunYi                       2.662e+01  2.253e+00  11.818  < 2e-16 ***
+districtTongZhou                     4.810e+01  1.261e+00  38.153  < 2e-16 ***
+districtXiCheng                     -1.401e+01  1.121e+00 -12.503  < 2e-16 ***
+communityAverage                     1.013e-03  1.443e-05  70.190  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 77 on 316411 degrees of freedom
+Multiple R-squared:  0.8821,	Adjusted R-squared:  0.8821 
+F-statistic: 6.575e+04 on 36 and 316411 DF,  p-value: < 2.2e-16
+

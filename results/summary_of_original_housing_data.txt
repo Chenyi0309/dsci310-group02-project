@@ -1,0 +1,56 @@
+     url                 id                 Lng             Lat       
+ Length:318851      Length:318851      Min.   :116.1   Min.   :39.63  
+ Class :character   Class :character   1st Qu.:116.3   1st Qu.:39.89  
+ Mode  :character   Mode  :character   Median :116.4   Median :39.93  
+                                       Mean   :116.4   Mean   :39.95  
+                                       3rd Qu.:116.5   3rd Qu.:40.00  
+                                       Max.   :116.7   Max.   :40.25  
+                                                                      
+      Cid              tradeTime               DOM            followers      
+ Min.   :1.111e+12   Min.   :2002-06-01   Min.   :   1.00   Min.   :   0.00  
+ 1st Qu.:1.111e+12   1st Qu.:2013-11-30   1st Qu.:   1.00   1st Qu.:   0.00  
+ Median :1.111e+12   Median :2015-09-12   Median :   6.00   Median :   5.00  
+ Mean   :1.129e+12   Mean   :2015-04-17   Mean   :  28.82   Mean   :  16.73  
+ 3rd Qu.:1.111e+12   3rd Qu.:2016-07-31   3rd Qu.:  37.00   3rd Qu.:  18.00  
+ Max.   :1.115e+15   Max.   :2018-01-28   Max.   :1677.00   Max.   :1143.00  
+                                          NA's   :157977                     
+   totalPrice          price            square          livingRoom  
+ Min.   :    0.1   Min.   :     1   Min.   :   6.90   Min.   :0.00  
+ 1st Qu.:  205.0   1st Qu.: 28050   1st Qu.:  57.90   1st Qu.:1.00  
+ Median :  294.0   Median : 38737   Median :  74.26   Median :2.00  
+ Mean   :  349.0   Mean   : 43530   Mean   :  83.24   Mean   :2.01  
+ 3rd Qu.:  425.5   3rd Qu.: 53820   3rd Qu.:  98.71   3rd Qu.:2.00  
+ Max.   :18130.0   Max.   :156250   Max.   :1745.50   Max.   :9.00  
+                                                      NA's   :32    
+  drawingRoom       kitchen          bathRoom           floor          
+ Min.   :0.000   Min.   :0.0000   Min.   :   0.000   Length:318851     
+ 1st Qu.:1.000   1st Qu.:1.0000   1st Qu.:   1.000   Class :character  
+ Median :1.000   Median :1.0000   Median :   1.000   Mode  :character  
+ Mean   :1.172   Mean   :0.9946   Mean   :   1.376                     
+ 3rd Qu.:1.000   3rd Qu.:1.0000   3rd Qu.:   1.000                     
+ Max.   :5.000   Max.   :4.0000   Max.   :2011.000                     
+ NA's   :32                       NA's   :2                            
+  buildingType   constructionTime   renovationCondition buildingStructure
+ Min.   :0.048   Length:318851      Min.   :0.000       Min.   :0.000    
+ 1st Qu.:1.000   Class :character   1st Qu.:1.000       1st Qu.:2.000    
+ Median :4.000   Mode  :character   Median :3.000       Median :6.000    
+ Mean   :3.010                      Mean   :2.606       Mean   :4.451    
+ 3rd Qu.:4.000                      3rd Qu.:4.000       3rd Qu.:6.000    
+ Max.   :4.000                      Max.   :4.000       Max.   :6.000    
+ NA's   :2021                                                            
+  ladderRatio          elevator     fiveYearsProperty     subway      
+ Min.   :       0   Min.   :0.000   Min.   :0.0000    Min.   :0.0000  
+ 1st Qu.:       0   1st Qu.:0.000   1st Qu.:0.0000    1st Qu.:0.0000  
+ Median :       0   Median :1.000   Median :1.0000    Median :1.0000  
+ Mean   :      63   Mean   :0.577   Mean   :0.6456    Mean   :0.6011  
+ 3rd Qu.:       0   3rd Qu.:1.000   3rd Qu.:1.0000    3rd Qu.:1.0000  
+ Max.   :10009400   Max.   :1.000   Max.   :1.0000    Max.   :1.0000  
+                    NA's   :32      NA's   :32        NA's   :32      
+    district      communityAverage
+ Min.   : 1.000   Min.   : 10847  
+ 1st Qu.: 6.000   1st Qu.: 46339  
+ Median : 7.000   Median : 59015  
+ Mean   : 6.764   Mean   : 63682  
+ 3rd Qu.: 8.000   3rd Qu.: 75950  
+ Max.   :13.000   Max.   :183109  
+                  NA's   :463     
