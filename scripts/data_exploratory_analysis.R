@@ -41,27 +41,27 @@ corrplot.mixed(cor_numVar,
                mar = c(0,0,2,0))
 dev.off()
 
+#Creating a functin for creating and saving the bosplots
+create_boxplot <- function(data, x_var, y_var, fill_var = NULL, plot_title, y_label,
+                           file_path, plot_width = 10, plot_height = 6, theme = theme_classic()) {
 
-# graph 3: Total housing price of whether having subway
-options(repr.plot.width=10, repr.plot.height=5)
-plot1 <- ggplot(beijing_house_price, aes(x=subway, y=totalPrice, fill=subway)) + 
-   geom_boxplot(alpha=0.5) +
-   labs(title = "Plot 3: Total housing price of whether having subway", 
-        y = "Total housing price") +
-   theme_classic() 
-ggsave("results/figure/plot_3_price_distribution_subway.png", plot = plot1, device = "png")
+  plot <- ggplot(data, aes_string(x = x_var, y = y_var, fill = fill_var)) + 
+    geom_boxplot(alpha = 0.5) +
+    labs(title = plot_title, y = y_label) +
+    theme
 
+  ggsave(file_path, plot = plot, device = "png", width = plot_width, height = plot_height)
+}
 
+# Plot 3: Total housing price of whether having subway
+create_boxplot(beijing_house_price, "subway", "totalPrice", "subway",
+               "Plot 3: Total housing price of whether having subway", "Total housing price",
+               "results/figure/plot_3_price_distribution_subway.png", 10, 5)
 
-# graph 4: Total housing price of whether having elevator
-options(repr.plot.width=10, repr.plot.height=6)
-plot2 <- ggplot(beijing_house_price, aes(x=elevator, y=totalPrice, fill=elevator)) + 
-   geom_boxplot(alpha=0.5) +
-   labs(title = "Plot 4: Total housing price of whether having elevator",
-        y = "Total housing price") +
-   theme_classic() 
-ggsave("results/figure/plot_4_price_distribution_elevator.png", plot = plot2, device = "png")
-
+# Plot 4: Total housing price of whether having elevator
+create_boxplot(beijing_house_price, "elevator", "totalPrice", "elevator",
+               "Plot 4: Total housing price of whether having elevator", "Total housing price",
+               "results/figure/plot_4_price_distribution_elevator.png", 10, 6)
 
 # Graph 5: Prices In Function Of The Renovation Condition
 options(repr.plot.width=10, repr.plot.height=6)
