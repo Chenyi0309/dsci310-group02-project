@@ -41,7 +41,7 @@ corrplot.mixed(cor_numVar,
                mar = c(0,0,2,0))
 dev.off()
 
-#Creating a functin for creating and saving the bosplots
+#Creating a functin for creating and saving the boxplots
 create_boxplot <- function(data, x_var, y_var, fill_var = NULL, plot_title, y_label,
                            file_path, plot_width = 10, plot_height = 6, theme = theme_classic()) {
 
@@ -53,12 +53,12 @@ create_boxplot <- function(data, x_var, y_var, fill_var = NULL, plot_title, y_la
   ggsave(file_path, plot = plot, device = "png", width = plot_width, height = plot_height)
 }
 
-# Plot 3: Total housing price of whether having subway
+# Graph 3: Total housing price of whether having subway
 create_boxplot(beijing_house_price, "subway", "totalPrice", "subway",
                "Plot 3: Total housing price of whether having subway", "Total housing price",
                "results/figure/plot_3_price_distribution_subway.png", 10, 5)
 
-# Plot 4: Total housing price of whether having elevator
+# Graph 4: Total housing price of whether having elevator
 create_boxplot(beijing_house_price, "elevator", "totalPrice", "elevator",
                "Plot 4: Total housing price of whether having elevator", "Total housing price",
                "results/figure/plot_4_price_distribution_elevator.png", 10, 6)
