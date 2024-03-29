@@ -6,7 +6,7 @@ library(lubridate)
 library(ggmap)
 library(mapproj)
 library(viridis)
-source("scripts/create_and_save_boxplot.R")
+source("R/create_and_save_boxplot.R")
 
 # Graph 1: Distribution of Total Price
 #Assuming the preprocessed data is stored in 'results/beijing_house_price_cleaned.csv'
