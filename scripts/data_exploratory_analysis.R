@@ -6,6 +6,7 @@ library(lubridate)
 library(ggmap)
 library(mapproj)
 library(viridis)
+source("scripts/create_and_save_boxplot.R")
 
 # Graph 1: Distribution of Total Price
 #Assuming the preprocessed data is stored in 'results/beijing_house_price_cleaned.csv'
@@ -40,18 +41,6 @@ corrplot.mixed(cor_numVar,
                title = "Plot 2: Correlation Matrix of the Numerical Variables",
                mar = c(0,0,2,0))
 dev.off()
-
-#Creating a functin for creating and saving the boxplots
-create_boxplot <- function(data, x_var, y_var, fill_var = NULL, plot_title, y_label,
-                           file_path, plot_width = 10, plot_height = 6, theme = theme_classic()) {
-
-  plot <- ggplot(data, aes_string(x = x_var, y = y_var, fill = fill_var)) + 
-    geom_boxplot(alpha = 0.5) +
-    labs(title = plot_title, y = y_label) +
-    theme
-
-  ggsave(file_path, plot = plot, device = "png", width = plot_width, height = plot_height)
-}
 
 # Graph 3: Total housing price of whether having subway
 create_boxplot(beijing_house_price, "subway", "totalPrice", "subway",
