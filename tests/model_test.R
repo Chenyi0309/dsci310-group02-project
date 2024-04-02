@@ -2,7 +2,7 @@ library(testthat)
 library(tidyverse)
 
 # Assuming the dataset and model script are already loaded
-# source("scripts/results_and_conclusion.R") 
+# source("R/model_building.R") 
 
 # Test if the model training is successful
 test_that("Model training is successful", {
