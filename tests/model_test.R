@@ -1,7 +1,6 @@
 library(testthat)
 library(tidyverse)
 
-# Assuming the dataset and model script are already loaded
 # source("R/model_building.R") 
 
 # Test if the model training is successful
