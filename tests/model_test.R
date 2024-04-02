@@ -2,7 +2,7 @@ library(testthat)
 library(tidyverse)
 
 # Assuming the dataset and model script are already loaded
-# source("path/to/your/model_script.R") # Make sure the path points to your model building script
+# source("scripts/results_and_conclusion.R") 
 
 # Test if the model training is successful
 test_that("Model training is successful", {
@@ -36,6 +36,6 @@ test_that("Model can predict on new data", {
 })
 
 # Run all the tests
-# test_dir("tests/") # Assuming your test scripts are located in the "tests/" directory
+# test_dir("tests/") 
 
 
