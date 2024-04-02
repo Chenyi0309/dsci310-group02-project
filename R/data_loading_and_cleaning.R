@@ -1,7 +1,7 @@
 #' Load, clean, and wrangle housing data
 #'
-#' This function reads a housing data CSV, cleans and wrangles the data by removing unwanted columns, handling missing values, and
-#' transforming categorical variables into factors with proper labels according to variable descriptions.
+#' This function reads the data, cleans and wrangles the data by removing some columns, handling missing values, and
+#' transforming categorical variables into factors.
 #'
 #' @param file_path The path to the input CSV file.
 #' @param encoding The character encoding of the input file.
@@ -30,4 +30,3 @@ clean_and_wrangle_housing_data <- function(file_path, encoding = "UTF-8") {
 
   return(housing_data)
 }
-
