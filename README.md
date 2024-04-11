@@ -43,7 +43,7 @@ To get started with the project, first clone the repository using Git:
 
 ```bash
 git clone https://github.com/wsl0917/dsci310-group02-project.git
-cd dsci310-group02
+cd dsci310-group02-project
 ```
 
 ### Step 2： Create a conda environment and install the dependencies:
