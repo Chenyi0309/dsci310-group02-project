@@ -19,6 +19,10 @@ This repository is part of a data analysis project for DSCI 310, exploring the f
 - [Citation](#citation)
 - [License](#license)
   
+## Background
+
+The housing market in Beijing, as in many large cities, is a complex system influenced by a multitude of factors including location, transportation accessibility, property attributes, and economic conditions. The study of housing prices in Beijing is particularly relevant due to the city’s rapid urbanization and economic growth, which have dramatically affected real estate values. Our analysis aims to uncover the drivers behind housing prices by examining a dataset of property sales in Beijing. The primary focus is on the role of location and temporal factors, such as proximity to subway lines and the date of the transaction. By leveraging various statistical and machine learning techniques, this project provides a detailed exploration of the relationships between housing prices and their potential predictors.
+
 ## Project Overview
 
 In this study, we investigate the primary factors that influence the cost of homes in Beijing. By analyzing data from Lianjia.com, we explore how the location of a property and the timing of its sale affect its price. This research aims to shed light on the complex dynamics of Beijing's real estate market and provide a clearer picture for individuals looking to understand the value of real estate in this bustling metropolis.
@@ -93,18 +97,15 @@ Data cleaning processes involved removing irrelevant columns, converting charact
 
 Further exploratory data analysis revealed insights into the relationships between various features of the properties and their prices. For example, histograms were used to visualize the distribution of total prices, while scatter plots helped in understanding the relationship between the square footage of properties and their total prices.
 
-Correlation matrices were computed and visualized to identify potential linear relationships between numerical variables, informing subsequent modeling choices.
+Correlation matrices were computed and visualized to identify potential linear relationships between numerical variables, informing subsequent modelling choices.
 
 ## Results
 
-Our analysis included detailed visualizations to compare various property features with the total price, which provided a clearer understanding of the housing market in Beijing. 
+Our analysis revealed several key insights into the Beijing housing market. Location emerged as a significant determinant of housing prices, with properties closer to subway stations commanding higher prices. The availability of amenities such as elevators also influenced prices, echoing the premium that buyers place on convenience and accessibility. Time played a crucial role as well, with fluctuations in prices observed over different months and years, reflecting broader economic trends and policy shifts.
 
-Box plots were employed to display the relationship between the number of living rooms, drawing rooms, and bathrooms with the total price of the properties. These plots illustrated the variation in price distribution across different property types.
+The data visualization component, including heatmaps and geospatial overlays, illustrated the geographical distribution of housing prices across Beijing's districts. It became evident that certain districts exhibited higher median prices, pointing to a stratified market that mirrors socio-economic divisions within the city.
 
-Finally, a linear regression model was developed to predict the total price of properties based on the available features. The model's performance was evaluated by comparing actual prices with predicted prices, which was visualized through a scatter plot overlaid with a line of perfect prediction. This comparison highlighted the model’s accuracy and potential predictive power.
-
-The results from these analyses will help in understanding the drivers of housing prices in Beijing and could assist buyers and sellers in making informed decisions in the real estate market.
-
+Overall, the project not only quantified the impact of individual factors on housing prices but also painted a comprehensive picture of the market's dynamics. The findings from this analysis could serve as a foundation for future studies, contribute to urban planning and policy formulation, and assist stakeholders in making informed decisions in the real estate domain.
 
 ## Contributing
 We welcome contributions to our project. Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
