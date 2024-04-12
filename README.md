@@ -56,22 +56,42 @@ conda activate my_r_env
 jupyter notebook analysis_notebook.ipynb
 ```
 
-## Using Docker
+## Setting Up and Running the Analysis Using Docker
 
-This project includes a Dockerfile which allows you to build a Docker image and run the analysis in an isolated environment. Here's how you can use Docker to set up your environment:
+Before starting, ensure you have Docker installed on your computer. If not, please download and install Docker from the official website. You need to open Docker to proceed with the next steps.
 
 ### Building the Docker Image
 
-First, build the Docker image from the project directory:
+To simplify the setup process and make our project accessible to users with varying levels of expertise, we have containerized our environment using Docker. This approach ensures that all dependencies are handled automatically, and you can run the analysis with ease.
+
+First, locate the **‘Dockerfile’** in the project directory. This file contains all the necessary instructions for Docker to build the environment required to run our project. If you're unfamiliar with navigating directories in the terminal or command prompt, here's a quick guide:
+
+**Windows Users**: Open Command Prompt or PowerShell.
+**macOS/Linux Users**: Open Terminal.
+Change the directory to the project's root folder where the **‘Dockerfile’** is located. You can do this using the **‘cd’** command followed by the path to the project directory. For example:
+
+```bash
+cd path/to/dsci310-group02-project
+```
+
+Once you're in the project directory, execute the following command to build the Docker image. This process can take a few minutes as Docker needs to download and configure the required environment:
 
 ```bash
 docker build -t dsci310-group02-project .
 ```
-
-Then, use the Docker
+### Running the Docker Container
+After the image has been successfully built, you can start a Docker container with the following command:
 ```bash
 docker run -it --rm -p 8888:8888 -v "$PWD":/home/jovyan/work dsci310-group02-project
 ```
+
+This command does several things:
+
+**‘-it’** allows you to interact with the Docker container through your terminal.
+**‘--rm’** automatically removes the container once it's stopped, keeping your system clean.
+**‘-p 8888:8888‘** maps port 8888 on your local machine to port 8888 in the Docker container, which is typically used for Jupyter notebooks.
+**’-v "$PWD":/home/jovyan/work‘** mounts your current directory to the **‘/home/jovyan/work’** directory in the container, allowing you to access your project files.
+
 ## Project Execution
 
 This project supports the use of `make` commands to simplify the execution process. Follow the steps below to run the entire project analysis:
