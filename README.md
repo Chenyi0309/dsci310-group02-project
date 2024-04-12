@@ -1,5 +1,5 @@
 # DSCI 310 Group02 Project: Uncovering the Drivers of Housing Prices in Beijing：The Influence of Location and Time
-
+[![codecov](https://codecov.io/gh/Chenyi0309/dsci310-group02-project/graph/badge.svg?token=N5F97P6ZNG)](https://codecov.io/gh/Chenyi0309/dsci310-group02-project)
 **Authors**: Prabhjot Singh, Yunxuan Zhang, Chenyi Zhao, Yelia Ye
 
 This repository is part of a data analysis project for DSCI 310, exploring the factors influencing housing prices in Beijing.
