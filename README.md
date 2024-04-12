@@ -11,7 +11,7 @@ This repository is part of a data analysis project for DSCI 310, exploring the f
 - [Project Overview](#project-overview)
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
-- [Docker Usage](#using-docker)
+- [Setting Up and Running the Analysis Using Docker](#setting-up-and-running-the-analysis-using-docker)
 - [Data Analysis](#data-analysis)
 - [Results](#results)
 - [Contributing](#contributing)
@@ -66,8 +66,8 @@ To simplify the setup process and make our project accessible to users with vary
 
 First, locate the **‘Dockerfile’** in the project directory. This file contains all the necessary instructions for Docker to build the environment required to run our project. If you're unfamiliar with navigating directories in the terminal or command prompt, here's a quick guide:
 
-**Windows Users**: Open Command Prompt or PowerShell.
-**macOS/Linux Users**: Open Terminal.
+- **Windows Users**: Open Command Prompt or PowerShell.
+- **macOS/Linux Users**: Open Terminal.
 Change the directory to the project's root folder where the **‘Dockerfile’** is located. You can do this using the **‘cd’** command followed by the path to the project directory. For example:
 
 ```bash
@@ -87,10 +87,10 @@ docker run -it --rm -p 8888:8888 -v "$PWD":/home/jovyan/work dsci310-group02-pro
 
 This command does several things:
 
-**‘-it’** allows you to interact with the Docker container through your terminal.
-**‘--rm’** automatically removes the container once it's stopped, keeping your system clean.
-**‘-p 8888:8888‘** maps port 8888 on your local machine to port 8888 in the Docker container, which is typically used for Jupyter notebooks.
-**’-v "$PWD":/home/jovyan/work‘** mounts your current directory to the **‘/home/jovyan/work’** directory in the container, allowing you to access your project files.
+- **‘-it’** allows you to interact with the Docker container through your terminal.
+- **‘--rm’** automatically removes the container once it's stopped, keeping your system clean.
+- **‘-p 8888:8888‘** maps port 8888 on your local machine to port 8888 in the Docker container, which is typically used for Jupyter notebooks.
+- **’-v "$PWD":/home/jovyan/work‘** mounts your current directory to the **‘/home/jovyan/work’** directory in the container, allowing you to access your project files.
 
 ## Project Execution
 
