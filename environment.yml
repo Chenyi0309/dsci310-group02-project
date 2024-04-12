@@ -1,6 +1,8 @@
 name: beijing_housing_analysis_Group_2
 channels:
   - conda-forge
+  - bioconda
+  - defaults
 dependencies:
   - r-base
   - r-dplyr
