@@ -77,7 +77,7 @@ docker build -t dsci310-group02-project .
 ### Running the Docker Container
 After the image has been successfully built, you can start a Docker container with the following command:
 ```bash
-docker run -it --rm -p 8888:8888 -v "$PWD":/home/jovyan/work dsci310-group02-project
+docker run -it --rm -p 8888:8888 dsci310-group02-project
 ```
 
 This command does several things:

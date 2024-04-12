@@ -9,10 +9,14 @@ format:
     pdf: 
         toc: true
         toc-depth: 2
-bibliography: references.bib
+        
+engine: kniter
+
 execute: 
     echo: false
     warning: false
+
+bibliography: references.bib
 ---
 
 ```{r}
@@ -24,9 +28,9 @@ library(corrplot)
 
 ## Aim
 
-In this study, we investigate the primary factors that influence the cost of homes in Beijing. By analyzing data from Lianjia.com, we explore how the location of a property and the timing of its sale affect its price. This research aims to shed light on the complex dynamics of Beijing's real estate market and provide a clearer picture for individuals looking to understand the value of real estate in this bustling metropolis.
+This study is embarked upon with the objective of delineating the principal factors that sway the pricing of residential real estate in the city of Beijing. Delving into a dataset aggregated from Lianjia.com, our analysis ventures beyond mere transactional data to scrutinize the influence of locational attributes and the chronology of sales on property valuation. This endeavor aims to untangle the intricate web of market dynamics that define Beijing's housing landscape, thus furnishing prospective buyers and industry observers with a comprehensive understanding of real estate valuation within this thriving metropolis.
 
-Given the rapid urbanization and rising housing costs in China, understanding the factors that drive housing prices is of crucial importance. By examining how public attention, as reflected through web search behaviors, influences the spatial dynamics of housing prices, we can provide novel insights that complement traditional real estate research, which often relies on transactional data alone. 
+Amidst the backdrop of China's accelerated urbanization and the consequent escalation in housing expenses, a thorough comprehension of the elements fuelling the property market's upward trajectory is deemed indispensable. Our investigation enriches the conventional real estate research canon by integrating public attention metrics, as inferred from web search behavior, thereby illuminating the spatial pricing patterns in a novel light. Echoing the findings of Hou (2010), our study examines the prevalence of housing price bubbles in Beijing and Shanghai through a multifaceted lens of indicators. In parallel, the works of Zhang and Yi (2018), Qin and Han (2013), and Han et al. (2021) are scrutinized, each contributing a unique perspective on the variables shaping Beijing's housing prices—from the sectorial decomposition of price influencers to the implications of educational amenities on property desirability.As demonstrated by Hou (2010), housing price bubbles in Beijing and Shanghai have been a subject of multi-indicator analysis[@hou2010housing]. Similarly, Zhang and Yi (2018) discuss factors contributing to rising house prices in Beijing[@ZHANG201872]. Qin and Han (2013) provide evidence of emerging polycentricity in Beijing through housing price variations[@qin_han_2013]. Additionally, the study by Han et al. (2021) focuses on the primary school premium and its influence on housing prices in Beijing[@han2021winning].
 
 ## Background
 
@@ -133,4 +137,4 @@ The building structure and renovation condition also matter. Properties with bri
 Lastly, the model identifies substantial spatial variation in housing prices across different districts in Beijing. Several districts, such as Chaoyang, Daxing, Fangshan, and Tongzhou, have significantly higher prices compared to the baseline, while the Xicheng district has lower prices. Additionally, the average price in the surrounding community is a strong positive predictor of individual property prices, highlighting the importance of local market conditions and amenities.
 Overall, this comprehensive regression analysis provides rich statistical evidence to deepen the understanding of the price formation mechanisms in the Beijing real estate market. While the linear framework has achieved good explanatory power, there may still be some heterogeneity and non-linear effects that warrant further exploration. Future research could experiment with more complex modeling approaches to further enhance the predictive accuracy and provide more precise insights to inform relevant decision-making.
 
-## Reference
+## references
