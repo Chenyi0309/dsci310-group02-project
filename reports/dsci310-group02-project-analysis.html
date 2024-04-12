@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="dsci310-group02-project-analysis_files/libs/clipboard/clipboard.min.js"></script>
@@ -47,11 +67,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim">Aim</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
   <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data Analysis</a></li>
   <li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation">Visualisation</a></li>
   <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="..\dsci310-group02-project-analysis.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -84,7 +106,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="aim" class="level2">
 <h2 class="anchored" data-anchor-id="aim">Aim</h2>
-<p>In this study, we investigate the primary factors that influence the cost of homes in Beijing. By analyzing data from Lianjia.com, we explore how the location of a property and the timing of its sale affect its price. This research aims to shed light on the complex dynamics of Beijing’s real estate market and provide a clearer picture for individuals looking to understand the value of real estate in this bustling metropolis.</p>
+<p>This study is embarked upon with the objective of delineating the principal factors that sway the pricing of residential real estate in the city of Beijing. Delving into a dataset aggregated from Lianjia.com, our analysis ventures beyond mere transactional data to scrutinize the influence of locational attributes and the chronology of sales on property valuation. This endeavor aims to untangle the intricate web of market dynamics that define Beijing’s housing landscape, thus furnishing prospective buyers and industry observers with a comprehensive understanding of real estate valuation within this thriving metropolis.</p>
+<p>Amidst the backdrop of China’s accelerated urbanization and the consequent escalation in housing expenses, a thorough comprehension of the elements fuelling the property market’s upward trajectory is deemed indispensable. Our investigation enriches the conventional real estate research canon by integrating public attention metrics, as inferred from web search behavior, thereby illuminating the spatial pricing patterns in a novel light. Echoing the findings of Hou (2010), our study examines the prevalence of housing price bubbles in Beijing and Shanghai through a multifaceted lens of indicators. In parallel, the works of Zhang and Yi (2018), Qin and Han (2013), and Han et al.&nbsp;(2021) are scrutinized, each contributing a unique perspective on the variables shaping Beijing’s housing prices—from the sectorial decomposition of price influencers to the implications of educational amenities on property desirability.As demonstrated by Hou (2010), housing price bubbles in Beijing and Shanghai have been a subject of multi-indicator analysis<span class="citation" data-cites="hou2010housing">(<a href="#ref-hou2010housing" role="doc-biblioref">Hou 2010</a>)</span>. Similarly, Zhang and Yi (2018) discuss factors contributing to rising house prices in Beijing<span class="citation" data-cites="ZHANG201872">(<a href="#ref-ZHANG201872" role="doc-biblioref">Zhang and Yi 2018</a>)</span>. Qin and Han (2013) provide evidence of emerging polycentricity in Beijing through housing price variations<span class="citation" data-cites="qin_han_2013">(<a href="#ref-qin_han_2013" role="doc-biblioref">Qin and Han 2013</a>)</span>. Additionally, the study by Han et al.&nbsp;(2021) focuses on the primary school premium and its influence on housing prices in Beijing<span class="citation" data-cites="han2021winning">(<a href="#ref-han2021winning" role="doc-biblioref">Han, Shen, and Zhao 2021</a>)</span>.</p>
+</section>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>The housing market in China has undergone significant changes in recent years, characterized by rapid urbanization and escalating housing costs. This has led to a growing body of literature on real estate price modeling, spatial analysis, and the incorporation of digital data sources, such as web search trends, to better understand consumer behavior and market dynamics. Our study situates itself within this broader context, seeking to contribute to the existing knowledge on the factors that shape housing prices in the Chinese context.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
@@ -93,6 +120,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="method" class="level2">
 <h2 class="anchored" data-anchor-id="method">Method</h2>
 <p>The R programming language (R Core Team, 2019) and the following R packages were used to perform the analysis: knitr (Xie 2014), tidyverse (Wickham 2017), and Quarto (Allaire et al 2022).</p>
+<p>To examine the relationship between public attention and housing prices in Chinese cities, we employ a time series analysis and linear regression modeling approach, complemented by spatial analysis using the ggmap package. This methodological framework has been widely used in real estate price research and allows us to capture the spatial and temporal dynamics of the housing market.</p>
+<p>In our analysis, we utilize web search data as a proxy for public attention, recognizing that this data source may be subject to certain biases. To address this, we supplement our time series and linear regression models with spatial analysis techniques enabled by the ggmap package. This allows us to visualize the geographic patterns of housing prices and explore the spatial relationships between public attention and price variations across different regions.</p>
 </section>
 <section id="data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="data-analysis">Data Analysis</h2>
@@ -293,9 +322,31 @@ Figure&nbsp;11: Prediction Model
 <p><a href="#tbl-model" class="quarto-xref">Table&nbsp;1</a> is the statistical summary of our linear regression model, which is built to predict house prices in Beijing, with the response variable totalPrice and various explanatory variables. The model excludes constructionTime and buildingType from the analysis.</p>
 <p>The model has a high Multiple R-squared value of 0.8831, indicating a strong fit to the data.</p>
 <p><a href="#fig-prediction-model" class="quarto-xref">Figure&nbsp;11</a> compares actual price and predicted total prices from the model, with a red line representing perfect prediction. Points close to this line are predictions that match closely with actual prices, whereas points further away represent less accurate predictions. <a href="#fig-prediction-model" class="quarto-xref">Figure&nbsp;11</a> shows a strong positive correlation, but with a certain degree of variance as prices increase, suggesting that while the model predicts lower-priced houses quite accurately, it is less precise with higher-priced ones.</p>
+<p>The present study employed a linear regression model to conduct an in-depth analysis of the key determinants of housing prices in the Beijing real estate market. The model exhibits a strong overall fit, with an R-squared of 0.8821, indicating that it is able to explain approximately 88.21% of the variation in housing prices. The F-statistic of 65,750 with a p-value less than 2.2e-16 suggests that the model is highly statistically significant. Examining the coefficient estimates, several key findings emerge. First, locational factors play a significant role in shaping housing prices. The model indicates that prices tend to decrease as the longitude (i.e., eastward location) increases and increase as the latitude (i.e., northward location) rises.</p>
+<p>Second, the time-related variables show interesting patterns. The number of days the property has been on the market (trade time) has a positive and highly significant association with prices, suggesting that properties that have been listed for longer tend to command higher prices, all else equal. The number of followers a property has is also positively related to prices, though the effect size is relatively small.</p>
+<p>Regarding the physical property characteristics, the results are consistent with standard hedonic pricing theory. Larger living area, more kitchens, and more bathrooms are associated with higher prices. Interestingly, the number of living rooms and drawing rooms have negative impacts on prices, potentially indicating a preference for more functional living spaces in this market.</p>
+<p>The building structure and renovation condition also matter. Properties with brick/wood construction tend to have lower prices compared to other building types, while homes with steel/concrete structures command higher prices. The condition of renovations also plays a role, with rough and simplistic renovations associated with lower prices relative to more extensive renovations. In terms of accessibility and ownership factors, the model reveals that properties without elevators have higher prices, potentially due to lower construction costs. Homes not located near a subway station also tend to have higher prices. However, the length of property ownership does not appear to have a significant effect on prices.</p>
+<p>Lastly, the model identifies substantial spatial variation in housing prices across different districts in Beijing. Several districts, such as Chaoyang, Daxing, Fangshan, and Tongzhou, have significantly higher prices compared to the baseline, while the Xicheng district has lower prices. Additionally, the average price in the surrounding community is a strong positive predictor of individual property prices, highlighting the importance of local market conditions and amenities. Overall, this comprehensive regression analysis provides rich statistical evidence to deepen the understanding of the price formation mechanisms in the Beijing real estate market. While the linear framework has achieved good explanatory power, there may still be some heterogeneity and non-linear effects that warrant further exploration. Future research could experiment with more complex modeling approaches to further enhance the predictive accuracy and provide more precise insights to inform relevant decision-making.</p>
+</section>
+<section id="references" class="level2 unnumbered">
+
+
 </section>
 
-</main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">references</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-han2021winning" class="csl-entry" role="listitem">
+Han, X., Y. Shen, and B. Zhao. 2021. <span>“Winning at the Starting Line: The Primary School Premium and Housing Prices in Beijing.”</span> <em>China Economic Quarterly International</em> 1 (1): 29–42. <a href="https://doi.org/10.1016/j.ceqi.2020.12.001">https://doi.org/10.1016/j.ceqi.2020.12.001</a>.
+</div>
+<div id="ref-hou2010housing" class="csl-entry" role="listitem">
+Hou, Y. 2010. <span>“Housing Price Bubbles in Beijing and Shanghai?: A Multi‐indicator Analysis.”</span> <em>International Journal of Housing Markets and Analysis</em> 3 (1): 17–37. <a href="https://doi.org/10.1108/17538271011027050">https://doi.org/10.1108/17538271011027050</a>.
+</div>
+<div id="ref-qin_han_2013" class="csl-entry" role="listitem">
+Qin, Bo, and Sun Sheng Han. 2013. <span>“Emerging Polycentricity in Beijing: Evidence from Housing Price Variations, 2001–05.”</span> <em>Urban Studies</em> 50 (10): 2006–23. <a href="https://doi.org/10.1177/0042098012471979">https://doi.org/10.1177/0042098012471979</a>.
+</div>
+<div id="ref-ZHANG201872" class="csl-entry" role="listitem">
+Zhang, Lei, and Yimin Yi. 2018. <span>“What Contributes to the Rising House Prices in Beijing? A Decomposition Approach.”</span> <em>Journal of Housing Economics</em> 41: 72–84. https://doi.org/<a href="https://doi.org/10.1016/j.jhe.2018.04.003">https://doi.org/10.1016/j.jhe.2018.04.003</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
