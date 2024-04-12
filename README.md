@@ -46,12 +46,7 @@ git clone https://github.com/wsl0917/dsci310-group02-project.git
 cd dsci310-group02-project
 ```
 
-### Step 2： Create a conda environment and install the dependencies:
-```bash
-conda env create -f environment.yml
-conda activate my_r_env
-```
-### Step 3: Navigate to the Jupyter notebook to start exploring the dataset:
+### Step 2: Navigate to the Jupyter notebook to start exploring the dataset:
 ```
 jupyter notebook analysis_notebook.ipynb
 ```
