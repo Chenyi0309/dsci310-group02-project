@@ -26,6 +26,12 @@ library(corrplot)
 
 In this study, we investigate the primary factors that influence the cost of homes in Beijing. By analyzing data from Lianjia.com, we explore how the location of a property and the timing of its sale affect its price. This research aims to shed light on the complex dynamics of Beijing's real estate market and provide a clearer picture for individuals looking to understand the value of real estate in this bustling metropolis.
 
+Given the rapid urbanization and rising housing costs in China, understanding the factors that drive housing prices is of crucial importance. By examining how public attention, as reflected through web search behaviors, influences the spatial dynamics of housing prices, we can provide novel insights that complement traditional real estate research, which often relies on transactional data alone. 
+
+## Background
+
+The housing market in China has undergone significant changes in recent years, characterized by rapid urbanization and escalating housing costs. This has led to a growing body of literature on real estate price modeling, spatial analysis, and the incorporation of digital data sources, such as web search trends, to better understand consumer behavior and market dynamics. Our study situates itself within this broader context, seeking to contribute to the existing knowledge on the factors that shape housing prices in the Chinese context.
+
 ## Data
 
 Housing price of Beijing from the
@@ -36,6 +42,10 @@ Housing price of Beijing from the
 The R programming language (R Core Team, 2019) 
 and the following R packages were used to perform the analysis: 
 knitr (Xie 2014), tidyverse (Wickham 2017), and Quarto (Allaire et al 2022). 
+
+To examine the relationship between public attention and housing prices in Chinese cities, we employ a time series analysis and linear regression modeling approach, complemented by spatial analysis using the ggmap package. This methodological framework has been widely used in real estate price research and allows us to capture the spatial and temporal dynamics of the housing market.
+
+In our analysis, we utilize web search data as a proxy for public attention, recognizing that this data source may be subject to certain biases. To address this, we supplement our time series and linear regression models with spatial analysis techniques enabled by the ggmap package. This allows us to visualize the geographic patterns of housing prices and explore the spatial relationships between public attention and price variations across different regions.
 
 ## Data Analysis
 
@@ -111,3 +121,16 @@ cat(file_content, sep="\n")
 The model has a high Multiple R-squared value of 0.8831, indicating a strong fit to the data.
 
 @fig-prediction-model compares actual price and predicted total prices from the model, with a red line representing perfect prediction. Points close to this line are predictions that match closely with actual prices, whereas points further away represent less accurate predictions. @fig-prediction-model shows a strong positive correlation, but with a certain degree of variance as prices increase, suggesting that while the model predicts lower-priced houses quite accurately, it is less precise with higher-priced ones.
+
+The present study employed a linear regression model to conduct an in-depth analysis of the key determinants of housing prices in the Beijing real estate market. The model exhibits a strong overall fit, with an R-squared of 0.8821, indicating that it is able to explain approximately 88.21% of the variation in housing prices. The F-statistic of 65,750 with a p-value less than 2.2e-16 suggests that the model is highly statistically significant. Examining the coefficient estimates, several key findings emerge. First, locational factors play a significant role in shaping housing prices. The model indicates that prices tend to decrease as the longitude (i.e., eastward location) increases and increase as the latitude (i.e., northward location) rises.
+
+Second, the time-related variables show interesting patterns. The number of days the property has been on the market (trade time) has a positive and highly significant association with prices, suggesting that properties that have been listed for longer tend to command higher prices, all else equal. The number of followers a property has is also positively related to prices, though the effect size is relatively small.
+
+Regarding the physical property characteristics, the results are consistent with standard hedonic pricing theory. Larger living area, more kitchens, and more bathrooms are associated with higher prices. Interestingly, the number of living rooms and drawing rooms have negative impacts on prices, potentially indicating a preference for more functional living spaces in this market.
+
+The building structure and renovation condition also matter. Properties with brick/wood construction tend to have lower prices compared to other building types, while homes with steel/concrete structures command higher prices. The condition of renovations also plays a role, with rough and simplistic renovations associated with lower prices relative to more extensive renovations. In terms of accessibility and ownership factors, the model reveals that properties without elevators have higher prices, potentially due to lower construction costs. Homes not located near a subway station also tend to have higher prices. However, the length of property ownership does not appear to have a significant effect on prices.
+
+Lastly, the model identifies substantial spatial variation in housing prices across different districts in Beijing. Several districts, such as Chaoyang, Daxing, Fangshan, and Tongzhou, have significantly higher prices compared to the baseline, while the Xicheng district has lower prices. Additionally, the average price in the surrounding community is a strong positive predictor of individual property prices, highlighting the importance of local market conditions and amenities.
+Overall, this comprehensive regression analysis provides rich statistical evidence to deepen the understanding of the price formation mechanisms in the Beijing real estate market. While the linear framework has achieved good explanatory power, there may still be some heterogeneity and non-linear effects that warrant further exploration. Future research could experiment with more complex modeling approaches to further enhance the predictive accuracy and provide more precise insights to inform relevant decision-making.
+
+## Reference
