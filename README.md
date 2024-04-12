@@ -58,7 +58,7 @@ jupyter notebook analysis_notebook.ipynb
 
 ## Setting Up and Running the Analysis Using Docker
 
-Before starting, ensure you have Docker installed on your computer. If not, please download and install Docker from the official website. You need to open Docker to proceed with the next steps.
+Before starting, ensure you have Docker installed on your computer. If not, please download and install Docker from the [official website](https://www.docker.com/products/docker-desktop). You need to open Docker to proceed with the next steps.
 
 ### Building the Docker Image
 
